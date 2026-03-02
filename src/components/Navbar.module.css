@@ -20,7 +20,6 @@ h1 {
     align-items: center;
     background-color: var(--secondary-bg-color);
     padding: 10px;
-    border-bottom: 5px solid black;
 }
 
 .navbar ul {
