@@ -1,8 +1,8 @@
 import { useState } from "react";
-import "./App.css";
-import Navbar from "./components/Navbar";
-import Projectcard from "./components/Projectcard";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
+import Projectcard from "./components/Projectcard/Projectcard";
 
 function Home() {
   return (
@@ -16,22 +16,33 @@ function Projects() {
   const [projects, setProjects] = useState([
     {
       id: 1,
-      title: "Enkel Kalkulator med HTML, CSS og JS",
+      title: "Enkel Kalkulator",
       img: "/assets/project_thumbnails/siverts_kalkulator.png",
+      github:
+        "https://github.com/sivertmh/project-hub-it1/tree/main/kalkulator",
     },
     {
       id: 2,
       title: "Karakterkalkulator",
-      img: "/assets/project_thumbnails/karakterkalk.png"
-    }
+      img: "/assets/project_thumbnails/karakterkalk.png",
+      github:
+        "https://github.com/sivertmh/project-hub-it1/tree/main/karaktersnitt",
+    },
   ]);
 
   return (
     <main>
-      <h1>Prosjekter</h1>
-      {projects.map((proj) => {
-        return <Projectcard key={proj.id} title={proj.title} img={proj.img} />;
-      })}
+      <h1>Siste Prosjekter</h1>
+      <p>Du kan lese mer om prosjektene ved å trykke på bildet.</p>
+      <div className="project_wrapper">
+        {projects.map((proj) => {
+          return (
+            <a href={proj.github} target="blank_">
+              <Projectcard key={proj.id} title={proj.title} img={proj.img} />
+            </a>
+          );
+        })}
+      </div>
     </main>
   );
 }

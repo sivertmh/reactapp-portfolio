@@ -15,6 +15,18 @@ h1, p, b {
     color: var(--main-fg-color);
 }
 
+.project_wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+
+.project_wrapper a {
+  text-decoration: none;
+}
+
 .App {
   text-align: center;
 }
