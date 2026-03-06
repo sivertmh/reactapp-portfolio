@@ -1,3 +1,20 @@
+:root {
+    --logo-fg-color: #C1BEF5;
+    --logo-color: #586ADD;
+    --logo-bg-color: #010756;
+    --main-bg-color: #191B1D;
+    --secondary-bg-color: #232527;
+    --main-fg-color: #ffffff;
+}
+
+main {
+    margin-inline: 5vw;
+}
+
+h1, p, b {
+    color: var(--main-fg-color);
+}
+
 .App {
   text-align: center;
 }

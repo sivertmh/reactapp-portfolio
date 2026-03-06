@@ -1,0 +1,11 @@
+.projectcard_cont {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.projectcard_cont img {
+    width: 300px;
+    box-shadow: #ffffff44 0px 1px 4px;
+    border-radius: 5px;
+}

@@ -1,13 +1,47 @@
+import { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Projectcard from "./components/Projectcard";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function Home() {
-  return <h1>Hjem</h1>;
+  return (
+    <main>
+      <h1>Hjem</h1>
+    </main>
+  );
 }
 
 function Projects() {
-  return <h1>Prosjekter</h1>;
+  const [projects, setProjects] = useState([
+    {
+      id: 1,
+      title: "Enkel Kalkulator med HTML, CSS og JS",
+      img: "/assets/project_thumbnails/siverts_kalkulator.png",
+    },
+    {
+      id: 2,
+      title: "Karakterkalkulator",
+      img: "/assets/project_thumbnails/karakterkalk.png"
+    }
+  ]);
+
+  return (
+    <main>
+      <h1>Prosjekter</h1>
+      {projects.map((proj) => {
+        return <Projectcard key={proj.id} title={proj.title} img={proj.img} />;
+      })}
+    </main>
+  );
+}
+
+function Contact() {
+  return (
+    <main>
+      <h1>Kontakt Meg</h1>
+    </main>
+  );
 }
 
 function App() {
@@ -15,13 +49,16 @@ function App() {
     <BrowserRouter>
       {/* Navigation */}
       <div className="App">
-        <Navbar />
+        <nav>
+          <Navbar />
+        </nav>
       </div>
 
       {/* Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/prosjekter" element={<Projects />} />
+        <Route path="/kontakt" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   );
