@@ -17,8 +17,7 @@ h1, p, b {
 
 .project_wrapper {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 100px;
 }

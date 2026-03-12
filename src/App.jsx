@@ -16,24 +16,36 @@ function Projects() {
   const [projects, setProjects] = useState([
     {
       id: 1,
-      title: "Enkel Kalkulator",
-      img: "/assets/project_thumbnails/siverts_kalkulator.png",
-      github:
-        "https://github.com/sivertmh/project-hub-it1/tree/main/kalkulator",
+      title: "Stemmeteller for Erikstad",
+      img: "/assets/project_thumbnails/stemmeteller_erikstad_thumbnail.png",
+      github: "https://github.com/sivertmh/oppdrag-stemmeteller"
     },
     {
       id: 2,
+      title: "Enkel Kalkulator",
+      img: "/assets/project_thumbnails/siverts_kalkulator.png",
+      github:
+        "https://github.com/sivertmh/hub-it1-prosjekter/tree/main/kalkulator",
+    },
+    {
+      id: 3,
       title: "Karakterkalkulator",
       img: "/assets/project_thumbnails/karakterkalk.png",
       github:
-        "https://github.com/sivertmh/project-hub-it1/tree/main/karaktersnitt",
+        "https://github.com/sivertmh/hub-it1-prosjekter/tree/main/karaktersnitt",
+    },
+    {
+      id: 4,
+      title: "The Ministry of Nothing",
+      img: "/assets/project_thumbnails/nothingministry_thumbnail.png",
+      github: "https://github.com/sivertmh/flaskapp-nothingministry",
     },
   ]);
 
   return (
     <main>
       <h1>Siste Prosjekter</h1>
-      <p>Du kan lese mer om prosjektene ved å trykke på bildet.</p>
+      <p>Her finner du mine siste prosjekter. Du kan lese mer om prosjektene ved å trykke på bildet.</p>
       <div className="project_wrapper">
         {projects.map((proj) => {
           return (
