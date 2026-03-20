@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Projectcard from "./components/Projectcard/Projectcard";
+import Footer from "./components/Footer/Footer";
 
 function Home() {
   return (
@@ -15,7 +16,14 @@ function Home() {
 function Projects() {
   const [projects, setProjects] = useState([
     {
-      id: 3,
+      id: 5,
+      title: "Internet Boardgame Database",
+      date: new Date("2026-03-20"),
+      img: "/assets/project_thumbnails/boardgamedatabase_thumbnail.png",
+      github: "https://github.com/sivertmh/flaskapp-boardgamedb",
+    },
+    {
+      id: 4,
       title: "Karakterkalkulator",
       date: new Date("2026-01-14"),
       img: "/assets/project_thumbnails/karakterkalk.png",
@@ -23,7 +31,7 @@ function Projects() {
         "https://github.com/sivertmh/hub-it1-prosjekter/tree/main/karaktersnitt",
     },
     {
-      id: 4,
+      id: 3,
       title: "The Ministry of Nothing",
       date: new Date("2025-12-19"),
       img: "/assets/project_thumbnails/nothingministry_thumbnail.png",
@@ -111,6 +119,9 @@ function App() {
         <nav>
           <Navbar />
         </nav>
+        <footer>
+          <Footer />
+        </footer>
       </div>
 
       {/* Routes */}
