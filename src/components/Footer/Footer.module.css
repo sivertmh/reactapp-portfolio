@@ -1,0 +1,20 @@
+.footer {
+  padding: 50px;
+}
+
+.footer__github--wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__github {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer__github--icon {
+  width: 25px;
+}

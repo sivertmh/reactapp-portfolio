@@ -8,6 +8,7 @@
 
 .proj_thumbnail {
     width: 300px;
+    /* Box-shadow henta fra https://getcssscan.com/css-box-shadow-examples */
     box-shadow: #ffffff44 0px 1px 4px;
     border-radius: 5px;
 }
@@ -16,8 +17,4 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.github_logo {
-    width: 25px;
 }

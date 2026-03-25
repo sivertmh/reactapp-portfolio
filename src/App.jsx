@@ -114,22 +114,26 @@ function Contact() {
 function App() {
   return (
     <BrowserRouter>
-      {/* Navigation */}
       <div className="App">
+        {/* Navbar */}
         <nav>
           <Navbar />
         </nav>
+
+        <main>
+          {/* Routes */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/prosjekter" element={<Projects />} />
+            <Route path="/kontakt" element={<Contact />} />
+          </Routes>
+        </main>
+
+        {/* Footer */}
         <footer>
           <Footer />
         </footer>
       </div>
-
-      {/* Routes */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/prosjekter" element={<Projects />} />
-        <Route path="/kontakt" element={<Contact />} />
-      </Routes>
     </BrowserRouter>
   );
 }

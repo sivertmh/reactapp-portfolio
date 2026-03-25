@@ -10,11 +10,6 @@ function Projectcard({ title, img }) {
       />
       <div className={style.proj_info}>
         <b>{title}</b>
-        <img
-          className={style.github_logo}
-          src="/assets/icons/GitHub_Invertocat_White.svg"
-          alt="Github logo"
-        />
       </div>
     </div>
   );
