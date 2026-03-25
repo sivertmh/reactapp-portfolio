@@ -7,6 +7,7 @@ const Footer = () => {
         <a
           className={style["footer__github"]}
           href="https://github.com/sivertmh"
+          target="_blank"
         >
           <img
             className={style["footer__github--icon"]}
