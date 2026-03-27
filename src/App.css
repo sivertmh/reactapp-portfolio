@@ -1,19 +1,29 @@
 :root {
+  /* Colors */
+  --main-fg-color: #ffffff;
+  --main-bg-color: #191B1D;
+  --secondary-bg-color: #232527;
   --logo-fg-color: #C1BEF5;
   --logo-color: #586ADD;
   --logo-bg-color: #010756;
-  --main-bg-color: #191B1D;
-  --secondary-bg-color: #232527;
-  --main-fg-color: #ffffff;
 }
 
 main {
   margin-inline: 3vw;
+  min-height: 80vh;
 }
 
 h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p,
-b {
+b,
+label,
+tr,
+td {
   color: var(--main-fg-color);
 }
 
@@ -26,4 +36,18 @@ b {
 
 .project_wrapper a {
   text-decoration: none;
+}
+
+.filter_cont,
+.sort_cont {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  padding-left: 0;
+  gap: 10px;
+}
+
+.filter_cont,
+.sort_cont select {
+  width: fit-content;
 }

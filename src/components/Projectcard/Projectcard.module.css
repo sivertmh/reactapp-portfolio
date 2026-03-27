@@ -4,13 +4,23 @@
     gap: 20px;
     margin-top: 30px;
     margin-bottom: 0;
+    border: 1px solid var(--logo-fg-color);
+    border-radius: 12px;
+    padding: 10px;
+    transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+}
+
+.projectcard_cont:hover {
+    border-color: var(--logo-color);
+    transform: scale(1.01, 1.01);
+    box-shadow: -0.8vw 0.8vw black;
 }
 
 .proj_thumbnail {
     width: 300px;
     /* Box-shadow henta fra https://getcssscan.com/css-box-shadow-examples */
     box-shadow: #ffffff44 0px 1px 4px;
-    border-radius: 5px;
+    border-radius: 2px;
 }
 
 .proj_info {

@@ -19,6 +19,7 @@ function Projects() {
       id: 5,
       title: "Internet Boardgame Database",
       date: new Date("2026-03-20"),
+      category: "IM",
       img: "/assets/project_thumbnails/boardgamedatabase_thumbnail.png",
       github: "https://github.com/sivertmh/flaskapp-boardgamedb",
     },
@@ -26,6 +27,7 @@ function Projects() {
       id: 4,
       title: "Karakterkalkulator",
       date: new Date("2026-01-14"),
+      category: "IT1",
       img: "/assets/project_thumbnails/karakterkalk.png",
       github:
         "https://github.com/sivertmh/hub-it1-prosjekter/tree/main/karaktersnitt",
@@ -34,6 +36,7 @@ function Projects() {
       id: 3,
       title: "The Ministry of Nothing",
       date: new Date("2025-12-19"),
+      category: "IM",
       img: "/assets/project_thumbnails/nothingministry_thumbnail.png",
       github: "https://github.com/sivertmh/flaskapp-nothingministry",
     },
@@ -41,6 +44,7 @@ function Projects() {
       id: 2,
       title: "Enkel Kalkulator",
       date: new Date("2025-12-3"),
+      category: "IT1",
       img: "/assets/project_thumbnails/siverts_kalkulator.png",
       github:
         "https://github.com/sivertmh/hub-it1-prosjekter/tree/main/kalkulator",
@@ -49,6 +53,7 @@ function Projects() {
       id: 1,
       title: "Stemmeteller for Erikstad",
       date: new Date("2025-04-10"),
+      category: "IM",
       img: "/assets/project_thumbnails/stemmeteller_erikstad_thumbnail.png",
       github: "https://github.com/sivertmh/oppdrag-stemmeteller",
     },
@@ -67,7 +72,7 @@ function Projects() {
   // Brukes i onChange hos #sort_proj.
   // Sjekker verdi av valgt select og sorterer deretter.
   const sortBy = (sortVal) => {
-    if (sortVal == "newest") {
+    if (sortVal === "newest") {
       sortByNewest();
     } else {
       sortByOldest();
@@ -81,14 +86,24 @@ function Projects() {
         Her finner du mine siste prosjekter. Du kan lese mer om prosjektene ved
         å trykke på bildet.
       </p>
-      <select
-        onChange={() => sortBy(document.querySelector("#sort_proj").value)}
-        name="sort_proj"
-        id="sort_proj"
-      >
-        <option value="newest">Nyeste Først</option>
-        <option value="oldest">Eldste Først</option>
-      </select>
+      <div className="filter_cont">
+        <b>Sorter etter</b>
+        <select
+          onChange={() => sortBy(document.querySelector("#sort_proj").value)}
+          name="sort_proj"
+          id="sort_proj"
+        >
+          <option value="newest">Nyeste Først</option>
+          <option value="oldest">Eldste Først</option>
+        </select>
+      </div>
+      <div className="sort_cont">
+        <b>Filtrer etter</b>
+        <select name="filter_proj" id="filter_proj">
+          <option value="im">IM-Fag</option>
+          <option value="it1">IT 1</option>
+        </select>
+      </div>
       <div className="project_wrapper">
         {/* Lager et prosjektkort per objekt i projects-listen */}
         {reversedProjects.map((proj) => {
@@ -128,9 +143,10 @@ function App() {
             <Route path="/kontakt" element={<Contact />} />
           </Routes>
         </main>
-
+          
         {/* Footer */}
         <footer>
+          
           <Footer />
         </footer>
       </div>
