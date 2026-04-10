@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
@@ -19,7 +19,7 @@ function Projects() {
       id: 5,
       title: "Internet Boardgame Database",
       date: new Date("2026-03-20"),
-      category: "IM",
+      category: "im",
       img: "/assets/project_thumbnails/boardgamedatabase_thumbnail.png",
       github: "https://github.com/sivertmh/flaskapp-boardgamedb",
     },
@@ -27,7 +27,7 @@ function Projects() {
       id: 4,
       title: "Karakterkalkulator",
       date: new Date("2026-01-14"),
-      category: "IT1",
+      category: "it1",
       img: "/assets/project_thumbnails/karakterkalk.png",
       github:
         "https://github.com/sivertmh/hub-it1-prosjekter/tree/main/karaktersnitt",
@@ -36,7 +36,7 @@ function Projects() {
       id: 3,
       title: "The Ministry of Nothing",
       date: new Date("2025-12-19"),
-      category: "IM",
+      category: "im",
       img: "/assets/project_thumbnails/nothingministry_thumbnail.png",
       github: "https://github.com/sivertmh/flaskapp-nothingministry",
     },
@@ -44,7 +44,7 @@ function Projects() {
       id: 2,
       title: "Enkel Kalkulator",
       date: new Date("2025-12-3"),
-      category: "IT1",
+      category: "it1",
       img: "/assets/project_thumbnails/siverts_kalkulator.png",
       github:
         "https://github.com/sivertmh/hub-it1-prosjekter/tree/main/kalkulator",
@@ -53,13 +53,19 @@ function Projects() {
       id: 1,
       title: "Stemmeteller for Erikstad",
       date: new Date("2025-04-10"),
-      category: "IM",
+      category: "im",
       img: "/assets/project_thumbnails/stemmeteller_erikstad_thumbnail.png",
       github: "https://github.com/sivertmh/oppdrag-stemmeteller",
     },
   ]);
 
-  const reversedProjects = projects.reverse();
+  const [filterProj, setFilterProj] = useState("ingen");
+
+  const filtered = projects.filter((item) => {
+    return filterProj === "ingen" || item.category === filterProj;
+  });
+
+  // Projeckt-sortering
 
   const sortByNewest = () => {
     setProjects([...projects].sort((a, b) => b.date - a.date));
@@ -70,7 +76,7 @@ function Projects() {
   };
 
   // Brukes i onChange hos #sort_proj.
-  // Sjekker verdi av valgt select og sorterer deretter.
+  // Sjekker verdi av utvalgt select og sorterer deretter.
   const sortBy = (sortVal) => {
     if (sortVal === "newest") {
       sortByNewest();
@@ -78,6 +84,8 @@ function Projects() {
       sortByOldest();
     }
   };
+
+  // Projekt-filtrering
 
   return (
     <main>
@@ -88,8 +96,9 @@ function Projects() {
       </p>
       <div className="filter_cont">
         <b>Sorter etter</b>
+        {/* Sorter prosjekter */}
         <select
-          onChange={() => sortBy(document.querySelector("#sort_proj").value)}
+          onChange={e => sortBy(e.target.value)}
           name="sort_proj"
           id="sort_proj"
         >
@@ -99,14 +108,22 @@ function Projects() {
       </div>
       <div className="sort_cont">
         <b>Filtrer etter</b>
-        <select name="filter_proj" id="filter_proj">
+        {/* Filtrer prosjekter */}
+        <select
+          onChange={(e) => {
+            setFilterProj(e.target.value);
+          }}
+          name="filter_proj"
+          id="filter_proj"
+        >
+          <option value="ingen">--- Ingen filter ---</option>
           <option value="im">IM-Fag</option>
           <option value="it1">IT 1</option>
         </select>
       </div>
       <div className="project_wrapper">
         {/* Lager et prosjektkort per objekt i projects-listen */}
-        {reversedProjects.map((proj) => {
+        {filtered.map((proj) => {
           return (
             <a href={proj.github} target="blank_">
               <Projectcard key={proj.id} title={proj.title} img={proj.img} />
@@ -143,10 +160,9 @@ function App() {
             <Route path="/kontakt" element={<Contact />} />
           </Routes>
         </main>
-          
+
         {/* Footer */}
         <footer>
-          
           <Footer />
         </footer>
       </div>

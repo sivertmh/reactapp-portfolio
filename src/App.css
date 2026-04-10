@@ -45,9 +45,5 @@ td {
   padding: 10px;
   padding-left: 0;
   gap: 10px;
-}
-
-.filter_cont,
-.sort_cont select {
   width: fit-content;
 }
