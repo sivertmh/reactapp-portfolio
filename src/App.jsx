@@ -98,7 +98,7 @@ function Projects() {
         <b>Sorter etter</b>
         {/* Sorter prosjekter */}
         <select
-          onChange={e => sortBy(e.target.value)}
+          onChange={(e) => sortBy(e.target.value)}
           name="sort_proj"
           id="sort_proj"
         >
