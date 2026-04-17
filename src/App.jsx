@@ -94,32 +94,34 @@ function Projects() {
         Her finner du mine siste prosjekter. Du kan lese mer om prosjektene ved
         å trykke på bildet.
       </p>
-      <div className="filter_cont">
-        <b>Sorter etter</b>
-        {/* Sorter prosjekter */}
-        <select
-          onChange={(e) => sortBy(e.target.value)}
-          name="sort_proj"
-          id="sort_proj"
-        >
-          <option value="newest">Nyeste Først</option>
-          <option value="oldest">Eldste Først</option>
-        </select>
-      </div>
-      <div className="sort_cont">
-        <b>Filtrer etter</b>
-        {/* Filtrer prosjekter */}
-        <select
-          onChange={(e) => {
-            setFilterProj(e.target.value);
-          }}
-          name="filter_proj"
-          id="filter_proj"
-        >
-          <option value="ingen">--- Ingen filter ---</option>
-          <option value="im">IM-Fag</option>
-          <option value="it1">IT 1</option>
-        </select>
+      <div className="filter_sort_wrapper">
+        <div className="filter_cont">
+          <b>Sorter etter</b>
+          {/* Sorter prosjekter */}
+          <select
+            onChange={(e) => sortBy(e.target.value)}
+            name="sort_proj"
+            id="sort_proj"
+          >
+            <option value="newest">Nyeste Først</option>
+            <option value="oldest">Eldste Først</option>
+          </select>
+        </div>
+        <div className="sort_cont">
+          <b>Filtrer etter</b>
+          {/* Filtrer prosjekter */}
+          <select
+            onChange={(e) => {
+              setFilterProj(e.target.value);
+            }}
+            name="filter_proj"
+            id="filter_proj"
+          >
+            <option value="ingen">--- Ingen filter ---</option>
+            <option value="im">IM-Fag</option>
+            <option value="it1">IT 1</option>
+          </select>
+        </div>
       </div>
       <div className="project_wrapper">
         {/* Lager et prosjektkort per objekt i projects-listen */}

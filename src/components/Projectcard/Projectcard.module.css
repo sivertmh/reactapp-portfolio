@@ -13,11 +13,12 @@
 .projectcard_cont:hover {
     border-color: var(--logo-color);
     transform: scale(1.01, 1.01);
-    box-shadow: -0.8vw 0.8vw black;
+    box-shadow: -16px 16px black;
 }
 
 .proj_thumbnail {
-    width: 300px;
+    width: 275px;
+    height: 275px;
     /* Box-shadow henta fra https://getcssscan.com/css-box-shadow-examples */
     box-shadow: #ffffff44 0px 1px 4px;
     border-radius: 2px;

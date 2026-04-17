@@ -10,6 +10,10 @@ body {
     gap: 50px;
 }
 
+.logo {
+    width: 275px;
+}
+
 .navlink {
     color: #ffffff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -18,8 +22,4 @@ body {
 
 .active_link, .navlink:hover {
     color: #C1BEF5;
-}
-
-.logo {
-    width: 300px;
 }

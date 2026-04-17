@@ -20,10 +20,7 @@ h4,
 h5,
 h6,
 p,
-b,
-label,
-tr,
-td {
+b {
   color: var(--main-fg-color);
 }
 
@@ -36,6 +33,11 @@ td {
 
 .project_wrapper a {
   text-decoration: none;
+}
+
+.filter_sort_wrapper {
+  display: flex;
+  flex-direction: row;
 }
 
 .filter_cont,
