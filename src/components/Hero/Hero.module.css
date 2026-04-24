@@ -1,0 +1,36 @@
+.hero {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.hero__header {
+    color: white;
+    border-right: 1px solid white;
+    width: 200px;
+    padding-right: 25px;
+}
+
+.header__border--fade {
+    border-right: 1px solid transparent;
+    border-image: linear-gradient(to bottom, white, #191b1d) 1;
+}
+
+.hero__header h1 {
+    margin: 0;
+}
+
+.hero__header i {
+    font-weight: 400;
+}
+
+.hero__paragraph {
+    color: white;
+    width: 300px;
+    margin-left: 50px;
+}
+
+.hero__header,
+.hero__paragraph {
+    padding-top: 125px;
+}

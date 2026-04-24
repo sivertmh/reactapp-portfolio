@@ -7,7 +7,7 @@ body {
     align-items: center;
     background-color: var(--secondary-bg-color);
     padding: 10px;
-    gap: 50px;
+    gap: 75px;
 }
 
 .logo {
@@ -16,7 +16,9 @@ body {
 
 .navlink {
     color: #ffffff;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
     text-decoration: none;
 }
 

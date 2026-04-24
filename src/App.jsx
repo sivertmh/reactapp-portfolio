@@ -4,12 +4,11 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Projectcard from "./components/Projectcard/Projectcard";
 import Footer from "./components/Footer/Footer";
+import Hero from "./components/Hero/Hero"
 
 function Home() {
   return (
-    <main>
-      <h1>Hjem</h1>
-    </main>
+    <Hero />
   );
 }
 
